@@ -1,19 +1,39 @@
 Hey! 👋
-My name is Vishal Kobla and I'm currently a Computer Science and Biomedical Engineering student at Georgia Tech!
+My name is Vishal Kobla, and I'm a Full Stack Software Developer/Engineer!
 
-Next Spring (2023), I should be receiving my:
+I most recently worked for ElectroTempo, Inc. as a full stack software developer, and I'm currently looking for a new job.
+
+At ElectroTempo, I mainly worked with the JavaScript and Python languages. In terms of tools, I worked with:
+<p>
+  <ul>
+    <li>React.js</li>
+    <li>Node.js</li>
+    <li>Express.js</li>
+    <li>AWS
+      <ul>
+        <li>Lambda</li>
+        <li>API Gateway</li>
+        <li>S3</li>
+        <li>CodePipeline</li>
+        <li>EC2</li>
+      </ul>
+    </li>
+    <li>Relational databases</li>
+  </ul>
+</p>
+
+In 2023, I graduated from Georgia Tech with:
 
 <p>
 <ul>
-<li>📜 🖥️ BS degrees in Computer Science & Biomedical Engineering</li>
+<li>📜 🖥️ BS degrees in Biomedical Engineering</li>
 <li>📃 🔐 Minor in Computational Data Analytics</li>
-<li>📃 🎮 Minor in Robotics</li>
+<li>📃 🎮 Minor in Robotics & Intelligence</li>
 </ul>
 </p>
 
-I worked this past summer for Intelligent Automation, Inc. as a Data Science intern, and I'm currently learning about software development and computer vision, practicing Leetcode, and working on a research project regarding image analysis of cancer cells.
 
-📫 How to reach me: vkobla3@gatech.edu
+📫 How to reach me: vishalkobla@hotmail.com
 
 
 
