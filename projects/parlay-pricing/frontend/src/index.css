@@ -201,12 +201,6 @@ body {
   font-size: 13px;
   font-weight: 600;
   transition: border-color 0.15s, box-shadow 0.15s;
-  -moz-appearance: textfield;
-}
-
-.odds-input::-webkit-outer-spin-button,
-.odds-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
 }
 
 .odds-input:focus {
