@@ -58,11 +58,9 @@ export default function App() {
   }
 
   function handleCalculateClick() {
-    try {
-      handleCalculate();
-    } catch (err) {
+    handleCalculate().catch(err => {
       setError(err instanceof Error ? err.message : 'Invalid input');
-    }
+    });
   }
 
   const allFilled = legs.every(l => l.value.trim() !== '');

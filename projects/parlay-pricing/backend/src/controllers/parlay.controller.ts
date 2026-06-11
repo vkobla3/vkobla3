@@ -3,7 +3,7 @@ import { calculateParlay, ParlayLeg, ValidationError } from '../services/parlay.
 
 export function calculateParlayHandler(req: Request, res: Response): void {
   try {
-    const { legs } = req.body as { legs: ParlayLeg[] };
+    const legs: ParlayLeg[] = req.body?.legs;
     const result = calculateParlay(legs);
     res.json(result);
   } catch (err) {

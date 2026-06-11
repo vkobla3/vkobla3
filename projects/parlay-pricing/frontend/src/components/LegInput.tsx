@@ -51,7 +51,8 @@ export default function LegInput({
       </div>
 
       <input
-        type="number"
+        type="text"
+        inputMode="decimal"
         className="odds-input"
         value={value}
         placeholder={FORMAT_PLACEHOLDERS[format]}

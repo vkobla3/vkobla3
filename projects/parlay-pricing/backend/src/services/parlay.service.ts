@@ -20,8 +20,15 @@ export class ValidationError extends Error {
   }
 }
 
+const VALID_FORMATS: string[] = ['american', 'decimal', 'probability'];
+
 function validateLeg(odds: number, format: OddsFormat, index: number): void {
   const label = `Leg ${index + 1}`;
+
+  if (!VALID_FORMATS.includes(format)) {
+    throw new ValidationError(`${label}: format must be "american", "decimal", or "probability"`);
+  }
+
   if (!isFinite(odds)) throw new ValidationError(`${label}: odds must be a finite number`);
 
   if (format === 'american') {
@@ -30,7 +37,8 @@ function validateLeg(odds: number, format: OddsFormat, index: number): void {
       throw new ValidationError(`${label}: American odds must be ≤ -100 or ≥ +100`);
     }
   } else if (format === 'decimal') {
-    if (odds < 1.0) throw new ValidationError(`${label}: decimal odds must be ≥ 1.0`);
+    // odds = 1.0 would imply certainty (probability = 1), causing division by zero downstream
+    if (odds <= 1.0) throw new ValidationError(`${label}: decimal odds must be > 1.0`);
   } else if (format === 'probability') {
     if (odds <= 0 || odds >= 100) {
       throw new ValidationError(`${label}: implied probability must be between 0 and 100 (exclusive)`);
@@ -50,6 +58,9 @@ function toImpliedProbability(odds: number, format: OddsFormat): number {
 }
 
 function toAmericanOdds(prob: number): number {
+  if (prob <= 0 || prob >= 1) {
+    throw new ValidationError('Combined parlay probability is outside the valid range (0, 1)');
+  }
   if (prob >= 0.5) {
     return -Math.round((prob / (1 - prob)) * 100);
   }
